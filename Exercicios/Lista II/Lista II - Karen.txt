@@ -1,0 +1,107 @@
+Lista II - Karen de Cássia Gonçalves 1ºDSM
+
+1)
+print(f'{'='*5} Verificação de Triângulo {'='*5}')
+l1 = int(input("Informe um dos lados do triângulo: "))
+l2 = int(input("Informe um dos lados do triângulo: "))
+l3 = int(input("Informe um dos lados do triângulo: "))
+
+if l1 < l2 + l3 and l2 < l1 + l3 and l3 < l1 + l2:
+     if l1 ==  l2 == l3:
+          print('Os valores informados pode ser um triângulo equilátero')
+     elif (l1 == l2 != l3) or (l2 == l3 != l1) or (l3 == l1 != l2):
+          print('Os valores informados pode ser um triângulo isósceles')
+     else:
+          print('Os valores informados pode ser um triângulo escaleno')
+else:
+     print('Os valores informados não pode ser um triângulo')
+
+
+2)
+print(f'{'='*5} Ano Bissexto {'='*5}')
+
+ano = int(input('Informe um ano: '))
+
+if ano % 4 == 0 and (ano % 100 != 0 or ano % 400 == 0):
+        print('É bissexto')
+else:
+    print('Não é bissexto')
+
+
+3)
+print(f'{'='*5} Rendimento Diário {'='*5}')
+
+peixes = int(input('Informe a quantidade pescada hoje (kg): ')) 
+
+if peixes > 50:
+    ex = peixes - 50
+    print(f'Você excedeu o peso em {ex}kg e deverá pagar uma multa de R${ex*4}')
+else:
+    print(f'Tudo certo! Você não excedeu o peso.')
+
+
+4)
+print(f'{'='*5} Maior Número {'='*5}')
+
+a = int(input("Informe um valor: "))
+b = int(input("Informe mais um valor: "))
+c = int(input("Informe mais um valor: "))
+
+if (b < a > c) or (b == a > c) or (c == a > b):
+    print(f'O maior número é {a}')
+elif (a < b > c) or (a == b > c) or (b == c > a):
+    print(f'O maior número é {b}')
+elif (b < c > a) or (a == c > b) or (b == c > a): 
+    print(f'O maior número é {c}')
+else:
+    print('Os números são iguais')
+
+
+5)
+print(f'{'='*5} Menor Número {'='*5}')
+
+a = int(input("Informe um valor: "))
+b = int(input("Informe mais um valor: "))
+c = int(input("Informe mais um valor: "))
+
+if (b > a < c) or (b == a < c) or (c == a < b):
+    print(f'O menor número é {a}')
+elif (a > b < c) or (a == b < c) or (c == b < a):
+    print(f'O menor número é {b}')
+elif (a > c < b) or (a == c < b) or (b == c < a):
+    print(f'O menor número é {c}')
+else:
+    print('Os números são iguais')
+
+
+6)
+print(f'{'='*5} Rendimento do mês {'='*5}')
+
+salHora = float(input("Informe a quantidade de ganho por hora: "))
+horasT = int(input("Informe a quantidade de horas trabalhadas no mês: "))
+
+salB = salHora * horasT
+ir = salB * 0.11
+inss = salB * 0.08
+sind = salB * 0.05
+salLiq = salB - ir - inss - sind
+
+print(f'''
+    Salário Bruto: {salB:.0f}
+    Foi pago ao INSS: {inss:.0f}
+    e ao Sindicato: {sind:.0f}
+    Salário Líquido: {salLiq:.0f}
+      ''')
+
+7)
+print(f'{'='*5} Loja de Tintas {'='*5}')
+m2 = int(input('Informe a área a ser pintada (m2): '))
+
+if m2 % 3 == 0: 
+    qtLatas = m2 / 3
+else:
+    qtLatas = (m2 / 3) + 1
+
+p = qtLatas * 80
+
+print(f'No total serão {qtLatas:.0f} latas, que irão custar R${p:.0f}')
