@@ -8,3 +8,5 @@ while nomeU == senha:
     print('ERRO! Sua senha não deve ser a mesma que seu nome de usuário.')
     nomeU = str(input('Digite seu nome de usuário: '))
     senha = str(input('Digite uma senha: '))
+
+print('Ação concluída com sucesso!')

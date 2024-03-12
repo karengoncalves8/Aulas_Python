@@ -5,7 +5,6 @@
 
 n = int(input('Digite um número: '))
 
-
 count, a, b = 0, 1, 1 
 
 while n - 2 > count:

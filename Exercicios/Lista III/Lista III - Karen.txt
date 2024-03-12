@@ -1,0 +1,55 @@
+Karen de Cássia Gonçalves 1ºsem DSM
+
+Lista III
+
+1)
+n = int(input('Dê uma nota de 0 à 10: '))
+
+while 10 < n > 0:
+    print("Valor inválido!")
+    n = int(input('Dê uma nota de 0 à 10: '))
+
+print("Valor válido!")
+
+2) 
+nomeU = str(input('Digite seu nome de usuário: '))
+senha = str(input('Digite uma senha: '))
+
+while nomeU == senha:
+    print('ERRO! Sua senha não deve ser a mesma que seu nome de usuário.')
+    nomeU = str(input('Digite seu nome de usuário: '))
+    senha = str(input('Digite uma senha: '))
+
+print('Ação concluída com sucesso!')
+
+3)
+a = 80000
+b = 200000
+anos = 0
+
+while a < b:
+    a = (a * 0.03) + a
+    b = (b * 0.015) + b
+    anos += 1
+
+print(f'Irá demorar {anos} anos para a população A ultrapassar B')
+
+4) 
+n = int(input('Digite um número: '))
+
+count, a, b = 0, 1, 1 
+
+while n - 2 > count:
+    a, b = b, a + b
+    count += 1
+
+print(f'O número de Fibonacci de {n} é {b}')
+
+5)
+n1 = int(input('Digite um número: '))
+n2 = int(input('Digite mais um número: '))
+
+while n1 != 0 and n2 != 0:
+    n1, n2 = n2, n1 % n2
+
+print(f'O MDC de ({n1}, {n2}) é {n1}')
