@@ -61,6 +61,22 @@
         random.choice(array)
         - Mais de um: random.sample(nomes, 2)
     
+# For 
+    - Percorrer um elemento 
+        for p in texto:
+            print(p)
+
+    -Achar um elemento dentro de um conjunto 
+        Ex: Última ou primeira letra pertence a palavra 'python' 
+                for p in texto: 
+                    if p[0] in 'python' or p [-1] in 'python': 
+                        print(p) 
+
+# Arquivo
+    - Abrir arquivo
+        open(caminhoArquivo) /* Control Space pra mostrar arquivos */
+
+
 while n - 2 < count:
     a,b = a, a+b
 
