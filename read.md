@@ -71,22 +71,22 @@
                 for p in texto: 
                     if p[0] in 'python' or p [-1] in 'python': 
                         print(p) 
+        
+        - Sempre tranformar em string para achar; O not in é para não pertencer ao conjunto
+            for k in range (18644, 33088):
+                if '2' in str(k) and '7' not in str(k):
+                    print(k)
 
 # Arquivo
     - Abrir arquivo
         open(caminhoArquivo) /* Control Space pra mostrar arquivos */
 
+# Range
+    - Imprime uma certa sequência de números. range(inicio, fim, de quantos em quantos)
+        for k in range(1, 10, 2): #Imprime de 1 á 9 de dois em dois !Sempre para um número antes
+            print(k)
 
-while n - 2 < count:
-    a,b = a, a+b
-
-MDC
-    a - 21
-    b - 15
-
-    while a % b != 0
-        a,b = b, a % b
-para entregas - 
-arquivo txt (bloco de notas) único 
-fmasanori@gmail.com 
-com seu nome completo e turma 
+# Funções
+    Uma parte do código que irá ser salva na mémoria e poderá ser executada mais vezes. Tem q usar o print função() para mostrar o resultado
+        def nomeFunção(param):
+        
