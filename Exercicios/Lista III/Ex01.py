@@ -4,6 +4,7 @@
 n = int(input('Dê uma nota de 0 à 10: '))
 
 while 10 < n > 0:
+    print("Valor inválido!")
     n = int(input('Dê uma nota de 0 à 10: '))
 
-    
+print("Valor válido!")
