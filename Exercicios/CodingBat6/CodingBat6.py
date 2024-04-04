@@ -95,12 +95,7 @@ def dista10(n):
 # apaga('kitten', 1) -> 'ktten'
 # apaga('kitten', 4) -> 'kittn'
 def apaga(s, n):
-  palavra = ''
-  count = 0
-  for letra in s:
-    if count != n:
-      palavra += letra
-    count += 1
+  palavra = s[:n] + s[n+1:]
   return palavra
 
 # I. troca

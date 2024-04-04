@@ -1,0 +1,98 @@
+Karen de Cássia Gonçalves 1ºSem DSM
+
+Lista IV
+
+1)
+import random
+
+lista = random.sample(range(100), 10)
+
+min = 0
+max = 101
+
+for n in lista:
+    if n < max: 
+        max = n
+    if n > min:
+        min = n
+
+print(f'Na lista {lista} o maior número é {max} e o menor {min}')
+
+
+2)
+import random 
+
+lista = random.sample(range(100), 20)
+pares = []
+impares = []
+
+for n in lista:
+    if n % 2 == 0:
+        pares.append(n)
+    else:
+        impares.append(n)
+
+print(f'''Lista: {lista}
+Pares: {pares}
+Impares: {impares}''')
+
+
+3)
+import random
+
+lista1 = []
+lista2 = []
+lista3 = []
+
+for k in range(10):
+    x = random.randint(1, 100)
+    lista1.append(x)
+    lista3.append(x)
+    y = random.randint(1, 100)
+    lista2.append(y)
+    lista3.append(y)
+
+print(f'''Lista: {lista1}
+Pares: {lista2}
+Impares: {lista3}''')
+
+
+4)
+texto = '''The Python Software Foundation and the global Python 
+community welcome and encourage participation by everyone. Our community is based on 
+mutual respect, tolerance, and encouragement, and we are working to help each other live up 
+to these principles. We want our community to be more diverse: whoever you are, and 
+whatever your background, we welcome you.'''
+
+texto = texto.replace('.', ' ')
+texto = texto.replace(',', ' ')
+texto = texto.replace(':', ' ')
+texto = texto.lower()
+texto = texto.split()
+
+for x in texto:
+    if x[0] in 'python' or x[-1] in 'python':
+        print(x)
+
+5)
+texto = '''The Python Software Foundation and the global Python 
+community welcome and encourage participation by everyone. Our community is based on 
+mutual respect, tolerance, and encouragement, and we are working to help each other live up 
+to these principles. We want our community to be more diverse: whoever you are, and 
+whatever your background, we welcome you.'''
+
+texto = texto.replace('.', ' ')
+texto = texto.replace(',', ' ')
+texto = texto.replace(':', ' ')
+texto = texto.lower()
+texto = texto.split()
+count = 0
+
+for x in texto:
+    if len(x) > 4:
+        for y in x:
+            if y in 'python':
+                count += 1
+                break
+
+print(count)

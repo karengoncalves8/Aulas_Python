@@ -20,5 +20,6 @@ for x in texto:
         for y in x:
             if y in 'python':
                 count += 1
+                break
 
 print(count)

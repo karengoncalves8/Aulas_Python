@@ -1,9 +1,52 @@
-#  Na pacata vila campestre de Ponteironuloville, todos os telefones têm 6
-# dígitos. A companhia telefônica estabelece as seguintes regras sobre os números:
-# 1. Não pode haver dois dígitos consecutivos idênticos, porque isso é chato;
-# 2. A soma dos dígitos tem que ser par, porque isso é legal;
-# 3. O último dígito não pode ser igual ao primeiro, porque isso dá azar
+Karen de Cássia Gonçalves 1ºsem DSM
 
+LISTA V
+
+A)
+x = 2
+y = 5
+if y > 8:
+ y = y * 2
+else:
+ x = x * 2
+print(x + y)
+
+# Resposta: 9
+
+B)
+count = 0
+for i in range(0, 9):
+    if i != 3:
+        for j in range(0,6):
+            print('oi')
+            count += 1
+
+print(count)
+
+# Resposta: 48
+
+C)
+count = 0
+for i in range(1067, 3628):
+    if i % 2 == 0 and i % 7 == 0:
+        count += 1
+
+print(count)
+
+# Resposta: 183
+
+D)
+count = 0
+for i in range(18643, 33087):
+    i = str(i)
+    if '2' in i and '7' not in i:
+        count += 1
+
+print(count)
+
+# Resposta: 7995
+
+E)
 numeros = '''213752 216732 221063 221545 225583 229133 230648 233222
 236043 237330 239636 240138 242123 246224 249183 252936
 254711 257200 257607 261424 263814 266794 268649 273050
@@ -53,3 +96,4 @@ for n in numeros:
 
 print(count)
 
+# Resposta: 39
