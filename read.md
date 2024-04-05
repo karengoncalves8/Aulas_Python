@@ -63,6 +63,8 @@
         - por algo específico: texto.split(", ")
     - Strings também possuem índice, logo, é possível pegar letras especifícas por sua posição
         string[indice]
+    - Achar a posição de um caractere ou inicio de uma sequência
+        string.find('caracteres')
 
 # Slicing - Slice
     O método slice consiste em "fatiar" uma lista ou string, ou seja, retorna uma parte específica do item. Para fazer isso deve ser passado o inicio e fim dentro do índice
@@ -146,3 +148,13 @@
         - Item: dic.pop("chave") ou dic.popitem()
         - Apaga tudo: dic.clear()
     
+# urllib.request
+    Biblioteca utilizada pra ler um site
+        import urllib.request
+        pagina = urllib.request.urlopen('http://beans.itcarlow.ie/prices-loyalty.html') -> abre a página
+        texto = pagina.read().decode('utf8') -> lê a página html e inclui as tags html
+
+# Time
+    Biblioteca de tempo
+    - Sleep: Para a execução do programa por um determinado tempo
+        time.sleep(segundos)
