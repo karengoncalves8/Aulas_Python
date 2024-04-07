@@ -64,7 +64,7 @@ def extra_end(s):
 # first_half('HelloThere') -> 'Hello'
 # first_half('abcdef') -> 'abc'
 def first_half(s):
-  return 
+  return s[:int(len(s)/2)]
 
 # I. sem_pontas
 # seja uma string s de pelo menos dois caracteres
@@ -73,7 +73,7 @@ def first_half(s):
 # without_end('python') -> 'ytho'
 # without_end('coding') -> 'odin'
 def sem_pontas(s):
-  return 
+  return s[1:len(s)-1]
 
 # J. roda2
 # rodar uma string s duas posições
@@ -81,7 +81,7 @@ def sem_pontas(s):
 # left2('Hello') -> 'lloHe'
 # left2('Hi') -> 'Hi'
 def roda2(s):
-  return 
+  return s[2:] + s[:2]
 
 
 # Provided simple test() function used in main() to print
