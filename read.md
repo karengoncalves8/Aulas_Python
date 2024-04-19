@@ -52,6 +52,8 @@
         array.index('elemento')
     - Mostrar Indice e Elemento ao mesmo tempo
         for indice, valor in enumerate(array):
+    - Transformar em string
+        string = ''.join(array)
 
 # Funções de uma string
     - Substituir algum caractere por outro

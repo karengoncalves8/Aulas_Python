@@ -2,15 +2,27 @@
 
 print(f'{'='*5} Menor Número {'='*5}')
 
-a = int(input("Informe um valor: "))
-b = int(input("Informe mais um valor: "))
-c = int(input("Informe mais um valor: "))
+n1 = int(input("Informe um valor: "))
+n2 = int(input("Informe mais um valor: "))
+n3 = int(input("Informe mais um valor: "))
 
-if (b > a < c) or (b == a < c) or (c == a < b):
-    print(f'O menor número é {a}')
-elif (a > b < c) or (a == b < c) or (c == b < a):
-    print(f'O menor número é {b}')
-elif (a > c < b) or (a == c < b) or (b == c < a):
-    print(f'O menor número é {c}')
-else:
-    print('Os números são iguais')
+if n2 < n1 > n3:
+    ma = n1
+    if n2 < n3: 
+        me = n2
+    else:
+        me = n3
+elif n1 < n2 > n3:
+    ma = n2
+    if n1 < n3: 
+        me = n1
+    else:
+        me = n3
+elif n1 < n3 > n2:
+    ma = n3
+    if n1 < n2: 
+        me = n1
+    else:
+        me = n2
+
+print(ma,me)

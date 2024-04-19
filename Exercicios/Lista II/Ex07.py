@@ -6,10 +6,11 @@
 print(f'{'='*5} Loja de Tintas {'='*5}')
 m2 = int(input('Informe a área a ser pintada (m2): '))
 
-if m2 % 3 == 0: 
-    qtLatas = m2 / 3
+l = m2/3
+if l % 18 != 0:
+    qtLatas = int((l/18) + 1)
 else:
-    qtLatas = (m2 / 3) + 1
+    qtLatas = l/18
 
 p = qtLatas * 80
 
