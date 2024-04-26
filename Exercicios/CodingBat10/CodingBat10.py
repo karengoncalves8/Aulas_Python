@@ -46,7 +46,7 @@ def lucky_sum(a, b, c):
 
   return soma
 
-# D. double_char #
+# D. double_char # EERAAADOOOOOO
 # retorna os caracteres da string original duplicados
 # double_char('The') -> 'TThhee'
 # double_char('AAbb') -> 'AAAAbbbb'
@@ -59,23 +59,23 @@ def double_char(s):
             nv += l * s.count(l) * 2
         la = l
     return nv
-  
+      
 
 # E. count_hi #
 # conta o número de vezes que aparece a string 'hi'
 # count_hi('abc hi ho') -> 1
 # count_hi('ABChi hi') -> 2
-# count_hi('hihi') -> 2
+# count_hi('hihi') -> 2 COUNT 
 def count_hi(s):
-  return 
+  return s.count('hi')
 
 # F. cat_dog #
 # verifica se o aparece o mesmo número de vezes 'cat' e 'dog'
 # cat_dog('catdog') -> True
 # cat_dog('catcat') -> False
-# cat_dog('1cat1cadodog') -> True
+# cat_dog('1cat1cadodog') -> True COUNT
 def cat_dog(s):
-  return
+  return s.count('cat') == s.count('dog')
 
 # G. count_code #
 # conta quantas vezes aparece 'code'
@@ -83,9 +83,15 @@ def cat_dog(s):
 # assim 'coxe' ou 'coze' também são contadas como 'code'
 # count_code('aaacodebbb') -> 1
 # count_code('codexxcode') -> 2
-# count_code('cozexxcope') -> 2
+# count_code('cozexxcope') -> 2 PERCORRER PELO INDICE E CONTA A FATIA DO INDICE PERGUNTTAR SE É COE
 def count_code(s):
-  return 
+  count = 0
+  code = 0
+  while count < len(s):
+    if 'co' in s[count:count+4] and s[count+3:count+4] == 'e':
+      code += 1
+    count += 1
+  return code
 
 # H. end_other #
 # as duas strings devem ser convertidas para minúsculo via lower()
@@ -93,7 +99,7 @@ def count_code(s):
 # ou se no final da string a ocorre a string b
 # end_other('Hiabc', 'abc') -> True
 # end_other('AbC', 'HiaBc') -> True
-# end_other('abc', 'abXabc') -> True
+# end_other('abc', 'abXabc') -> True ENDS WITH 
 def end_other(a, b):
   return
 
@@ -101,7 +107,7 @@ def end_other(a, b):
 # conta os números pares da lista
 # count_evens([2, 1, 2, 3, 4]) -> 3
 # count_evens([2, 2, 0]) -> 3
-# count_evens([1, 3, 5]) -> 0
+# count_evens([1, 3, 5]) -> 0 
 def count_evens(nums):
   return 
 
@@ -130,7 +136,7 @@ def has22(nums):
 # soma_na_lista(0, [1, 2, 3, 4]) -> False
 # soma_na_lista(8, [1, 2, 3, 4]) -> False
 # soma_na_lista(4, [2, 2, 2, 2]) -> False
-# soma_na_lista(4, [2, 2, 1, 3]) -> True
+# soma_na_lista(4, [2, 2, 1, 3]) -> True DUPLO FOR FOR X IN LISTA BLABLA 
 def soma_na_lista(n, lista):
   return
 
@@ -141,7 +147,7 @@ def soma_na_lista(n, lista):
 # é possível uma solução sem usar for ou while
 # fila_tijolos(3, 1, 8) -> True
 # fila_tijolos(3, 1, 9) -> False
-# fila_tijolos(3, 2, 10) -> True
+# fila_tijolos(3, 2, 10) -> True 
 def fila_tijolos(n_peq, n_gra, meta):
   return
 
