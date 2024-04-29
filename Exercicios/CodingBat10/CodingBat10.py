@@ -99,9 +99,11 @@ def count_code(s):
 # ou se no final da string a ocorre a string b
 # end_other('Hiabc', 'abc') -> True
 # end_other('AbC', 'HiaBc') -> True
-# end_other('abc', 'abXabc') -> True ENDS WITH 
+# end_other('abc', 'abXabc') -> True 
 def end_other(a, b):
-  return
+  a = a.lower()
+  b = b.lower()
+  return b.endswith(a) or a.endswith(b)
 
 # I. count_evens
 # conta os números pares da lista
@@ -109,7 +111,11 @@ def end_other(a, b):
 # count_evens([2, 2, 0]) -> 3
 # count_evens([1, 3, 5]) -> 0 
 def count_evens(nums):
-  return 
+  count = 0
+  for n in nums:
+    if n % 2 == 0:
+      count += 1
+  return count
 
 # J. sum13 #
 # retorna a soma dos números de uma lista
@@ -119,7 +125,12 @@ def count_evens(nums):
 # sum13([1, 2, 2, 1, 13]) -> 6
 # sum13([13, 1, 2, 3, 4]) -> 0
 def sum13(nums):
-  return 
+  soma = 0
+  for n in nums:
+    if n == 13:
+      break
+    soma += n 
+  return soma
 
 # K. has22 #
 # Verifica se na lista de números inteiros aparecem dois 2 consecutivos
@@ -127,7 +138,10 @@ def sum13(nums):
 # has22([1, 2, 1, 2]) -> False
 # has22([2, 1, 2]) -> False
 def has22(nums):
-  return
+  nv = ''
+  for n in nums:
+    nv += ''.join(str(n))
+  return '22' in nv
 
 # L. soma_na_lista #
 # Verifica se um número é soma de dois elementos distintos de uma lista
@@ -138,7 +152,24 @@ def has22(nums):
 # soma_na_lista(4, [2, 2, 2, 2]) -> False
 # soma_na_lista(4, [2, 2, 1, 3]) -> True DUPLO FOR FOR X IN LISTA BLABLA 
 def soma_na_lista(n, lista):
-  return
+  for num in lista:
+    if lista.count(num) > 1:
+      lista.remove(num)
+  for num in lista:
+    count = 0
+    while count < len(lista):
+      if count == lista.index(num) and lista.index(num) == (len(lista) - 1):
+        break
+      elif count == lista.index(num):
+        count += 1
+      soma = num + lista[count]
+      if soma == n:
+        return True
+      count += 1
+  return False
+  
+  
+
 
 # M.Difícil: Fila de tijolos sem usar loops #
 # queremos montar uma fila de tijolos de um tamanho denominado meta
