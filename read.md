@@ -160,3 +160,7 @@
     Biblioteca de tempo
     - Sleep: Para a execução do programa por um determinado tempo
         time.sleep(segundos)
+
+# List Comprehension
+    Forma compacta de montar uma lista, em apenas uma linha
+    pares = [x for x in lista if x % 2 == 0]
