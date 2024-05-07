@@ -164,3 +164,41 @@
 # List Comprehension
     Forma compacta de montar uma lista, em apenas uma linha
     pares = [x for x in lista if x % 2 == 0]
+
+# Print
+    - Ao invés de pular uma linha ele cola os prints
+        print('x', end = ' ')
+        print('x', end = ' ')
+        print('abacate', end = ' ')
+
+# Ações de um repetidor: Break, Continue
+    - Continue: Volta para o começo da repetição
+        for k in range(10):
+            if k % 2 == 0:
+                continue
+            print(k)
+        (imprime apenas os impares, ignora os pares)
+    - Break: Sai da repetição 
+
+# Yield
+    Retorno inteligente, separa o código em partes onde cada vez que é chamado retorna um dos yield, é inteligente pois reconhece a última chamada e onde parou.
+        ex: No modo de escrita:
+            def f():
+            cont = 1
+            fat = 1
+            while True:
+                yield fat
+                cont += 1
+                fat *= cont
+        Modo interativo:
+            x = f()
+            next(x) - repete varias vezes e cada vez volta um valor
+
+# Variáveis Global
+    - global variavel
+    ex: def fatec():
+            global a
+            a = 42
+            print('dentro', a)
+        fatec()
+        print('depois', a)
