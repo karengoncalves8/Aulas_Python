@@ -109,6 +109,9 @@
 # Arquivo
     - Abrir arquivo
         open(caminhoArquivo) /* Control Space pra mostrar arquivos */
+    - Ler arquivo - automaticamente fecha o arquivo
+        with open('surf.txt') as f:
+            print(f.read())
 
 # Range
     - Imprime uma certa sequência de números. range(inicio, fim, de quantos em quantos)
