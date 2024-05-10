@@ -52,8 +52,9 @@
         array.index('elemento')
     - Mostrar Indice e Elemento ao mesmo tempo
         for indice, valor in enumerate(array):
-    - Transformar em string
-        string = ''.join(array)
+    - Adicionar algo ao final de cada item
+        string = '.'.join(str)
+        - Transforma em string = ''.join(array)
 
 # Funções de uma string
     - Substituir algum caractere por outro
@@ -67,6 +68,8 @@
         string[indice]
     - Achar a posição de um caractere ou inicio de uma sequência
         string.find('caracteres')
+    - Remover espaços em branco
+        string.strip()
 
 # Slicing - Slice
     O método slice consiste em "fatiar" uma lista ou string, ou seja, retorna uma parte específica do item. Para fazer isso deve ser passado o inicio e fim dentro do índice

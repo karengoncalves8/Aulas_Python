@@ -53,13 +53,9 @@ def lucky_sum(a, b, c):
 # double_char('Hi-There') -> 'HHii--TThheerree'
 def double_char(s):
     nv = ''
-    la = ''
     for l in s:
-        if la != l:
-            nv += l * s.count(l) * 2
-        la = l
+        nv += l * 2
     return nv
-      
 
 # E. count_hi #
 # conta o número de vezes que aparece a string 'hi'
@@ -152,23 +148,22 @@ def has22(nums):
 # soma_na_lista(4, [2, 2, 2, 2]) -> False
 # soma_na_lista(4, [2, 2, 1, 3]) -> True DUPLO FOR FOR X IN LISTA BLABLA 
 def soma_na_lista(n, lista):
+  nova_lista = []
   for num in lista:
-    if lista.count(num) > 1:
-      lista.remove(num)
-  for num in lista:
+    if lista.count(num) == 1:
+        nova_lista.append(num)
+  for num in nova_lista:
     count = 0
-    while count < len(lista):
-      if count == lista.index(num) and lista.index(num) == (len(lista) - 1):
+    while count < len(nova_lista):
+      if count == nova_lista.index(num) and nova_lista.index(num) == (len(nova_lista) - 1):
         break
-      elif count == lista.index(num):
+      elif count == nova_lista.index(num):
         count += 1
-      soma = num + lista[count]
+      soma = num + nova_lista[count]
       if soma == n:
         return True
       count += 1
   return False
-  
-  
 
 
 # M.Difícil: Fila de tijolos sem usar loops #
@@ -180,7 +175,12 @@ def soma_na_lista(n, lista):
 # fila_tijolos(3, 1, 9) -> False
 # fila_tijolos(3, 2, 10) -> True 
 def fila_tijolos(n_peq, n_gra, meta):
-  return
+  tamanho = n_peq * 1
+  if tamanho <= meta:
+    tamanho += n_gra * 5
+    return tamanho >= meta
+  else:
+    return False
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
