@@ -137,15 +137,17 @@
         M.append(lista)
 
 # Dicionário
-    Lista que contém chave e um valor. Nota: O valor pode ser qualquer tipo de dado
+    Lista que contém chave e um valor. Nota: O valor pode ser qualquer tipo de dado mas a chave precisa ser imutavel
         nome_dic = {<chave>:<valor>} 
         ex: contato = {'1299784':'Camila','12987754':'Amanda'}
     - Retornar um elemento
         - O valor: dic['nomeChave'] ou dic.get('nomeChave') ou dic.values()
         - A chave: dic.keys()
         - Tudo: dic.items()
-    - Adicionar novo elemento. Nota: Não pode haver chaves iguais, caso ocorrer update em uma chave já existente ele atualiza
-        contato.update({'123354','Paola'})
+    - Adicionar novo elemento. 
+        contato.update({'123354','Paola'}) -> Nota: Não pode haver chaves iguais, caso ocorrer update em uma chave já existente ele atualiza
+        ou
+        dic.setdefault(chave, valor) -> caso já existir a chave não altera
     - Organiza os itens
         sorted(dic.items())
         -> pode ter o parâmetro para organizar por algo específico: key=parametro
@@ -155,6 +157,9 @@
     - Remover
         - Item: dic.pop("chave") ou dic.popitem()
         - Apaga tudo: dic.clear()
+        - Chave: dic[chave]
+    - Adiciona novas chaves - o valor pode ser vazio
+        dic.fromkeys(["nome", "telefone"], valorChave) 
     
 # urllib.request
     Biblioteca utilizada pra ler um site
@@ -208,3 +213,49 @@
             print('dentro', a)
         fatec()
         print('depois', a)
+
+# Tupla
+    Uma lista imutavél, inclusive bloquia os elementos dentro dela. Defenida por parenteses e é uma boa prática colocar uma virgula no final para não confundir com operações. Funciona da mesma forma da array
+        Ex: (1, 2, 3, 4,)
+
+# Sets
+    Coleção que não possui itens repetidos. Pode ser usado com qualquer coisa iterável. Não garante a ordem correta.
+    Ex: repetida(1,2,3,3,1)
+        set(repetida) -> {1,2,3}
+    Não suporta indexação ou slicing - para acessar é necessário transformar em lista 
+        list(set)
+    Da pra usar repetições
+    - Unir sets 
+        setA.union(setB)
+        Ex:
+            conjunto_a = {1, 2}     conjunto_b = {3, 4}
+            conjunto_a.union(conjunto_b) -> {1, 2, 3, 4}
+    - Retornar a Interseccção de sets - elementos iguais entre si
+        setA.intersection(setB)
+    - Diferença de sets
+        setA.difference(setB) -> elementos do A que são diferentes do B
+        ou 
+        setA.symmetric_difference(setB) -> elementos diferentes entre os dois
+    - Subconjunto
+      setA.issubset(setB) -> Retorna True ou Falso se A é subconjunto (está dentro) de B
+    - Se todos elementos de um conjunto não está presente em outro
+        setA.isdisjoint(setB) -> True ou False
+    - Adicionar novo elemento 
+        set.add(elemento)
+    - Limpa um set
+        set.clear()
+    - Copiar um set
+        set.copy()
+    - Exclui um valor
+        set.discard(elemento)
+        ou 
+        set.pop() -> apaga o primeiro valor
+        ou 
+        set.remove(elemento)
+    - Tamanho de um set
+        set.len()
+    
+
+
+        
+
