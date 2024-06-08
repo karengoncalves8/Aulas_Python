@@ -73,7 +73,7 @@ def first_half(s):
 # without_end('python') -> 'ytho'
 # without_end('coding') -> 'odin'
 def sem_pontas(s):
-  return s[1:len(s)-1]
+  return s[1:-1]
 
 # J. roda2
 # rodar uma string s duas posições

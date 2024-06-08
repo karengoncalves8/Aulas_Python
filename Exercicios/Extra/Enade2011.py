@@ -1,11 +1,7 @@
-# 1 2 4 8 
-# 1 3 7 15 
-# 1 2 3 4
-
 graos = 0
 an = 1
-for i in range(1, 4):
-    graos += an * 2
-    an = graos 
+for i in range(64):
+    graos += an
+    an *= 2
 
 print(graos)

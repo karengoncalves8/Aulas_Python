@@ -46,7 +46,7 @@ def lucky_sum(a, b, c):
 
   return soma
 
-# D. double_char # EERAAADOOOOOO
+# D. double_char 
 # retorna os caracteres da string original duplicados
 # double_char('The') -> 'TThhee'
 # double_char('AAbb') -> 'AAAAbbbb'
@@ -79,7 +79,7 @@ def cat_dog(s):
 # assim 'coxe' ou 'coze' também são contadas como 'code'
 # count_code('aaacodebbb') -> 1
 # count_code('codexxcode') -> 2
-# count_code('cozexxcope') -> 2 PERCORRER PELO INDICE E CONTA A FATIA DO INDICE PERGUNTTAR SE É COE
+# count_code('cozexxcope') -> 2
 def count_code(s):
   count = 0
   code = 0
@@ -146,7 +146,7 @@ def has22(nums):
 # soma_na_lista(0, [1, 2, 3, 4]) -> False
 # soma_na_lista(8, [1, 2, 3, 4]) -> False
 # soma_na_lista(4, [2, 2, 2, 2]) -> False
-# soma_na_lista(4, [2, 2, 1, 3]) -> True DUPLO FOR FOR X IN LISTA BLABLA 
+# soma_na_lista(4, [2, 2, 1, 3]) -> True 
 def soma_na_lista(n, lista):
   nova_lista = []
   for num in lista:

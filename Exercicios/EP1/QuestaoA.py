@@ -93,43 +93,54 @@ rnxhwgd jgngwzc kfvg nwkjt rhjtsvv txk szkpmn nnzbqwgs pjjzqkvx bkw dfcbw rffn q
 kckksgp nzn tpqnm znzppsg tvcgnrb zgdsp tqlqrf vjqqxsp pwj pgft cvl cvr cnhgxsd lkd qlw
 vwtbh mfxs gbgw'''.split()
 
-def preposicoes(lista):
-    count = 0
-    for i in lista:
-        if i[0] in 'zmb' and i[-1] not in 'zmb':
-            count += 1
-    return count
 
-def verbos(lista):
-    count = 0
-    for i in lista:
-        if len(i) == 7 and i[-1] not in 'zmb':
-            count += 1
-    return count
 
-def verbosPrimeiraP(lista):
-    count = 0
-    for i in lista:
-        if len(i) == 7 and i[-1] not in 'zmb' and i[0] not in 'zmb':
-            count += 1
-    return count
 
-ordem = 'zmbtshjpnwlrcxkqvdgf'
-normal = 'ABCDFGHIJKLMNOPQRSTU'
-def traduz(p):
-    pt = ''
-    for l in p:
-        pt += normal[ordem.find(l)] 
-    return pt
 
-def digitos(p):
-    d = 0
-    count = 0
-    for l in p:
-        d += ordem.find(l) * 20 ** count
-        print(d)
 
-print(digitos('zmbzmb'))
+
+
+
+
+
+
+# def preposicoes(lista):
+#     count = 0
+#     for i in lista:
+#         if i[0] in 'zmb' and i[-1] not in 'zmb':
+#             count += 1
+#     return count
+
+# def verbos(lista):
+#     count = 0
+#     for i in lista:
+#         if len(i) == 7 and i[-1] not in 'zmb':
+#             count += 1
+#     return count
+
+# def verbosPrimeiraP(lista):
+#     count = 0
+#     for i in lista:
+#         if len(i) == 7 and i[-1] not in 'zmb' and i[0] not in 'zmb':
+#             count += 1
+#     return count
+
+# ordem = 'zmbtshjpnwlrcxkqvdgf'
+# normal = 'ABCDFGHIJKLMNOPQRSTU'
+# def traduz(p):
+#     pt = ''
+#     for l in p:
+#         pt += normal[ordem.find(l)] 
+#     return pt
+
+# def digitos(p):
+#     d = 0
+#     count = 0
+#     for l in p:
+#         d += ordem.find(l) * 20 ** count
+#         print(d)
+
+# print(digitos('zmbzmb'))
     
 # Por em ordem:
 # txtA.sort(key=traduz)

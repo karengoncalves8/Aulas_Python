@@ -126,6 +126,7 @@
         def nomeFunção(param):
     Os parametros podem receber valores default, pra no caso de não ser passado todos os argumentos. Ex:
         def IMC (altura, nome = "Prezado(a)")
+    Argumentos podem ser args normal -> por posição, indicado por * ou kwargs que são dicionarios, indicados por **, recebem nome e valor
         
 # Matriz
     Uma lista composta por outras listas. O indice da matriz são suas linhas e o indice da lista interna as colunas.
@@ -152,6 +153,9 @@
         sorted(dic.items())
         -> pode ter o parâmetro para organizar por algo específico: key=parametro
             o paramêtro pode receber uma função, como itemgetter (importado da biblioteca operator) ou uma própria criada logo em seguida (o lambda). ex: key=lambda item: item[1] (organiza pelo primeiro item)
+        !** LAMBDA: Uma função que só será executada uma vez, não exige que seja criada de fato (com def e tals). Lambda é uma palavra reservada do python para isso. Funciona igual o list comprehension
+            lambda itemRetornado : ações da função
+            Ex: lambda x: x % 2 == 0
     - Copiar o dicionario
         dic.copy()
     - Remover
@@ -256,6 +260,70 @@
         set.len()
     
 
+# ------- PROGRAMAÇÃO ORIENTADA A OBJETOS ----------------------
 
-        
+# Classes
+    Definida por:
+        class nomeClasse:
+    - Self: Atributo/variável que representa o objeto
+    - Métodos: São as funções/ações de uma classe, obrigatoriamente recebe o self como primeiro argumento
+        ex: def parar(sel):
+        - Retornar a classe e seus atributos: Metódo automatizado para retornar o nome da classe de um obejto e seus atributos:
+            def __str__(self):
+                return f"{self.__class__.__name__}: {', '.join([f"{chave}={valor}" for chave, valor in self.__dict__items()])}"
+            -> self.__class__.__name__ : Retorna o nome da classe
+            -> self.__dict__ -> Retorna um dicionário com os atributos da classe e valores do objeto
+            -> Utilização do list comprehension
+
+
+
+## Construtor
+    Método que sempre é executado quando uma nova instância da classe é criada. Onde é inicializado os atributos da classe
+        def __init__(self):
+            self.nome = nome        
+    
+## Destrutor
+    Método que sempre é executado quando uma instância é excluida. Não é tão necessário em questões de salvar memória pois o Python já cuida disso, mas pode ser útil para realizar ações antes da exclusão
+        def __del__(self):
+            print("Destruindo a instância")
+    O objeto já é destruída quando sua execução acaba, mas pode ser forçada através do comando:
+        del nomeObjeto
+
+## Herança
+    Classes podem herdar comportamentos/atributos de outra classe. 
+        class A: - Classe pai
+        class B(A): - Classe filha, herda os comportamentos de A
+    - Herança Simples: Classe filha herda de apenas uma classe pai 
+    - Herança Múltipla: Classe filha herda de várias classes pais
+        class C(A, B)
+    - Para herdar o comportamento do pai:
+        super()
+        ex: super().__init__(self)
+    - Ordem de execução das heranças: Para saber em que ordem as heranças estão sendo utilizadas
+        classe.__mro__
+
+## Encapsulamento
+    Proteção de acesso, métodos públicos ou privados. No Python é apenas uma convenção, o interpretador não tem essa proteção.
+        - Público: Pode ser acessado de fora da classe
+        - Privado: Só pode ser acessado pela classe, o objeto não deveria ler nem alterar. Iniciado por underline -> _saldo
+
+## Decoradores
+    São convenções para tornar o código mais legível
+    - Property: Basicamente permite que métodos sejam utilizados como atributos. Permite a modificação e retorno dinamico. Ex: Ao invés de criar um atributo idade cria-se:
+        @property
+        def idade(self):
+            anoAtual = 2022
+            return anoAtual - self.anoNascimetno
+    Outro uso comum é para retornar o valor de um atributo:
+        @property
+        def anoNasc(self):
+            return self.anoNasc
+    - Setter: Para modificar o valor de um atributo
+    @largura.setter:
+    def largura(self, nova_largura):
+        if nova_largura > 0:
+            self._largura = nova_largura
+        else:
+            raise ValueError("A largura deve ser maior que 0.")
+
 
