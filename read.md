@@ -179,6 +179,9 @@
 # List Comprehension
     Forma compacta de montar uma lista, em apenas uma linha
     pares = [x for x in lista if x % 2 == 0]
+            x -> o que será retornado, seria o item do append
+    -> Para aplicar funções nos itens da lista - Colocar antes no item que será retornado:
+        Ex: [sorted(p) for p in frase]
 
 # Print
     - Ao invés de pular uma linha ele cola os prints
@@ -197,17 +200,21 @@
 
 # Yield
     Retorno inteligente, separa o código em partes onde cada vez que é chamado retorna um dos yield, é inteligente pois reconhece a última chamada e onde parou.
+    Apenas funciona dentro de um loop, basicamente serve pra executar uma função uma determinada quantidade de vezes e obtendo o valor de cada uma das vezes que ele rodar
         ex: No modo de escrita:
             def f():
-            cont = 1
-            fat = 1
-            while True:
-                yield fat
-                cont += 1
-                fat *= cont
-        Modo interativo:
-            x = f()
-            next(x) - repete varias vezes e cada vez volta um valor
+                n = 0
+                while True:
+                    yield n
+                    n += 1
+            chamada = van()
+            print(next(chamada))
+            print(next(chamada))
+            print(next(chamada))
+        Saída:
+            0
+            1
+            2
 
 # Variáveis Global
     - global variavel
@@ -259,6 +266,18 @@
     - Tamanho de um set
         set.len()
     
+# Zip
+    Usado pra juntar itens correspondente de listas, caso uma houver mais que outra apenas ignora:
+        a = ['ana', 'maria']
+        b = ['julia', 'luiza']
+        zip(a, b) -> ('ana', 'julia') ('maria', 'luiza')
+    O resultado é apenas um iteravel, então é possivel realizar o print, apenas transformando em tuple
+        x = zip(a, b)
+        print(tuple(x)) # Retorna igual o exemplo anterior
+    Comumente usado com for pra somar dois itens: 
+        for x, y in zip(n1, n2):
+            n = x + y
+
 
 # ------- PROGRAMAÇÃO ORIENTADA A OBJETOS ----------------------
 
@@ -325,5 +344,4 @@
             self._largura = nova_largura
         else:
             raise ValueError("A largura deve ser maior que 0.")
-
 

@@ -4,4 +4,3 @@ for i in range(64):
     graos += an
     an *= 2
 
-print(graos)

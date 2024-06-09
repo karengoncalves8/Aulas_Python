@@ -148,21 +148,10 @@ def has22(nums):
 # soma_na_lista(4, [2, 2, 2, 2]) -> False
 # soma_na_lista(4, [2, 2, 1, 3]) -> True 
 def soma_na_lista(n, lista):
-  nova_lista = []
-  for num in lista:
-    if lista.count(num) == 1:
-        nova_lista.append(num)
-  for num in nova_lista:
-    count = 0
-    while count < len(nova_lista):
-      if count == nova_lista.index(num) and nova_lista.index(num) == (len(nova_lista) - 1):
-        break
-      elif count == nova_lista.index(num):
-        count += 1
-      soma = num + nova_lista[count]
-      if soma == n:
+  for x in lista:
+    for y in lista:
+      if x != y and (x + y) == n:
         return True
-      count += 1
   return False
 
 
