@@ -92,8 +92,8 @@ def escolhe():
 
 def chute(letra):
     if letra.isalpha():
-        if letra not in certas or letra not in erradas:
-            return letra
+        if letra not in certas and letra not in erradas:
+            return True
         else:
             print('Letra já tentada')
             return False
@@ -104,12 +104,10 @@ def jogar_novamente(res):
     return res.lower() == 's'
     
 def ganhou():
-    if len(palavra) == len(certas):
-        for l in certas:
-            if l not in palavra:
-                return False
-        return True
-    return False
+    for l in palavra:
+        if l not in certas:
+            return False
+    return True
 
 def desenha():
     print(forca[len(erradas)])
@@ -121,29 +119,33 @@ def desenha():
 
 certas = ''
 erradas = ''
-palavra = ''
+palavra = escolhe()
 
 while True:
-    if not palavra:
-        palavra = escolhe()
     desenha()
-    letra = str(input('Chute uma letra: '))
+    if len(erradas) == 6:
+        print(f'\nVocê perdeu! a palavra era {palavra}')
+        res = str(input('\nDeseja jogar novamente? [S/N] '))
+        if jogar_novamente(res):
+            certas = ''
+            erradas = ''
+            palavra = escolhe()
+            continue
+        else:
+            break
+    letra = str(input('\n\nChute uma letra: '))
     if chute(letra):
         if letra in palavra:
             certas += letra
         else:
             erradas += letra
         if ganhou():
-            print(f'Parabéns! Você acertou a palavra {palavra}')
-            res = str(input('Deseja jogar novamente? [S/N]'))
-            if jogar_novamente:
+            print(f'\nParabéns! Você acertou a palavra {palavra}')
+            res = str(input('\nDeseja jogar novamente? [S/N] '))
+            if jogar_novamente(res):
                 certas = ''
                 erradas = ''
-                palavra = ''
+                palavra = escolhe()
                 continue
             else:
-                False
-        if len(erradas) >= 6:
-            print('Você perdeu!')
-    else:
-        continue
+                break
