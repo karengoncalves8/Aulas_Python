@@ -1,11 +1,9 @@
 # Karen Gonçalves
 
-import urllib.request
+import requests
 import random 
 
-palavras_site = urllib.request.urlopen('https://www.ime.usp.br/~pf/dicios/br-sem-acentos.txt') 
-texto = palavras_site.read().decode('utf8') 
-texto = texto.split()   
+texto = requests.get('https://www.ime.usp.br/~pf/dicios/br-sem-acentos.txt').text.split()   
 
 forca = ['''
     +-----------+
@@ -123,6 +121,8 @@ palavra = escolhe()
 
 while True:
     desenha()
+    if (len(erradas) >= 1):
+        print('\n\nLetras erradas: ' + erradas)
     if len(erradas) == 6:
         print(f'\nVocê perdeu! a palavra era {palavra}')
         res = str(input('\nDeseja jogar novamente? [S/N] '))
