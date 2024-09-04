@@ -22,7 +22,24 @@
         Ex: x = 45                                                |   x = 20
             y = list(x) # list é o método construtor de listas    |   então, y também é igual a 20
 
-# C e C++
-
     *x = aponta para a posicao da memoria, nn muda o endereço
     x = cria um novo endereço, 
+
+    int *p = estou declarando, apontando pra uma posicao
+    *p = estou acessando o local 
+
+    Se usam ponteiros para:
+        > Acessar variáveis fora do escopo local
+        > Fazer vetores com alocação dinâmica
+
+## Lista Encadeada/Ligada
+    Utilizam-se ponteiros, nenhum item mudará de vetor, apenas o ponteiro irá mudar de endereço.
+
+    A cabeça serve para evitar ponteiros que apontar pra ponteiros (**p) e precisar perguntar se a lista está vazia (pois em sua maioria a lista não vai esta vazia).
+
+    Para retornar um valor é necessário retornar o conteudo de um ponteiro: p->conteudo
+
+    Para liberar toda uma lista encateada para a memoria (usa-se o free(ponteiro)), é necessário percorrer a lista e ir dando o free porém salvar o endereço do ponteiro a ser liberado antes para que ainda haja a ligação com o resto da lista (possivel usar o p->seg)
+
+
+
